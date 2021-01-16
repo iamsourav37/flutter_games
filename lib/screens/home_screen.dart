@@ -16,36 +16,39 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text("Flutter Games"),
       ),
       drawer: this._buildDrawer(context),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          BuildExpandedCard(
-            label: 'Tic Tac Toe',
-            onTap: () {
-              debugPrint("navigate to Tic Tac Toe screen");
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return TicTacToe();
-                  },
-                ),
-              );
-            },
-          ),
-          BuildExpandedCard(
-            label: 'Scratch & Win',
-            onTap: () {
-              debugPrint("navigate to Scratch & Win screen");
-            },
-          ),
-          BuildExpandedCard(
-            label: 'Dice Roller',
-            onTap: () {
-              debugPrint("navigate to Dice Roller screen");
-            },
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            BuildExpandedCard(
+              label: 'Tic Tac Toe',
+              onTap: () {
+                debugPrint("navigate to Tic Tac Toe screen");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return TicTacToe();
+                    },
+                  ),
+                );
+              },
+            ),
+            BuildExpandedCard(
+              label: 'Scratch & Win',
+              onTap: () {
+                debugPrint("navigate to Scratch & Win screen");
+              },
+            ),
+            BuildExpandedCard(
+              label: 'Dice Roller',
+              onTap: () {
+                debugPrint("navigate to Dice Roller screen");
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
